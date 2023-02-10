@@ -1,0 +1,1504 @@
+<html>
+<head>
+	<meta charset="utf-8">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      min-height: 500px;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="map"></div>
+<script>
+    // Don't forget to replace <YOUR_ACCESS_TOKEN> by your real access token ! 
+    const accessToken = 'IQuu6nhyqlTGIY23gDB6zhMfJsKAgdaVwOCMVa5dnPeoBQ0ibjx1LDnntDSHbzKG';
+    // Set your custom style ID. To get your custom style ID see https://www.jawg.io/docs/maps#get-custom-style-id
+    const styleId = '86d6bce3-fa6f-47c7-8e94-a30d597b7a15';
+    const map = L.map('map').setView([48.9070392,2.3569261], 9.98);
+    L.tileLayer(
+      `https://tile.jawg.io/86d6bce3-fa6f-47c7-8e94-a30d597b7a15/{z}/{x}/{y}.png?access-token=IQuu6nhyqlTGIY23gDB6zhMfJsKAgdaVwOCMVa5dnPeoBQ0ibjx1LDnntDSHbzKG`, {
+        attribution: '<a href="aboutmaps.html" title="Tiles Courtesy of Jawg Maps" target="_blank" class="jawg-attrib">&copy; <b>Search</b>Area</a> '  ,
+        maxZoom: 24
+      }
+    ).addTo(map);
+
+    
+
+
+
+
+
+    var myIcon = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([49.099443503273754, 2.525513074646554], {icon: myIcon}).addTo(map).bindPopup("Survilliers-Fosses<br>RER D et BUS<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var leshalles = L.icon({
+    iconUrl: 'Paris_transit_icons_-_Train.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.86194219845679, 2.34666766580676], {icon: leshalles}).addTo(map).bindPopup("Chatelet-les-Halles<br>RER A, B, D Metro et BUS<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var gdn = L.icon({
+    iconUrl: 'Paris_transit_icons_-_Train.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.881164154513684, 2.35469799244917], {icon: gdn}).addTo(map).bindPopup("Gare du Nord<br>RER B et D, Transilien H,  Metro et BUS<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+
+var est = L.icon({
+    iconUrl: 'Paris_transit_icons_-_Train.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.87786059195781, 2.360681724343013], {icon: est}).addTo(map).bindPopup("Gare de l'Est <br>RER E, Transilien P, Metro, TGV et TER<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var stf = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.91776370282559, 2.3499039549672123], {icon: stf}).addTo(map).bindPopup("Stade de France - St Denis <br>RER D et BUS<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var strer = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.934849257153, 2.345368850852462], {icon: strer}).addTo(map).bindPopup("Saint Denis <br>RER D, Tramway et BUS<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var piefi = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.96393237402921, 2.3724017725613478], {icon: piefi}).addTo(map).bindPopup("Pierrefitte - Stains <br>RER D et BUS<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var sar = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.97677854600487, 2.390603516470463], {icon: sar}).addTo(map).bindPopup("Garges-Sarcelles <br>RER D, Tramway et BUS<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var vbel = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.994120315021085, 2.416870938637186], {icon: vbel}).addTo(map).bindPopup("Villiers-le-Bel <br>RER D et BUS<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var goussrer = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([49.023612266130364, 2.462454395673591], {icon: goussrer}).addTo(map).bindPopup("Goussainville <br>RER D et BUS<br><a href='test.html'>Itinéraire</a>");
+
+
+
+var goussrer2 = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([49.032660901037715, 2.4766754079788518], {icon: goussrer2}).addTo(map).bindPopup("Les Noues <br>RER D<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var louvrerer = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([49.049434026881165, 2.501728580698005], {icon: louvrerer}).addTo(map).bindPopup("Louvre <br>RER D et BUS<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+
+var gdlyon = L.icon({
+    iconUrl: 'Paris_transit_icons_-_Train.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.84434471240587, 2.3744486774856153], {icon: gdlyon}).addTo(map).bindPopup("Gare de Lyon <br>RER A, D, Metro, TGV et TER et BUS<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var monttgv = L.icon({
+    iconUrl: 'Paris_transit_icons_-_Train.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.83978089806996, 2.318301384291999], {icon: monttgv}).addTo(map).bindPopup("Gare Montparnasse <br>Transilien N, Metro, TGV, TER et BUS<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var laz = L.icon({
+    iconUrl: 'Paris_transit_icons_-_Train.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.87674443536111, 2.3250142554952165], {icon: laz}).addTo(map).bindPopup("Gare St Lazare<br>Transilien et TER<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.85953866183684, 2.347058784638902], {icon: metro}).addTo(map).bindPopup("Chatelet<br>Metro 1, 4, 7, 11, 14<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.85838416444201, 2.3421554270750446], {icon: metro}).addTo(map).bindPopup("Pont-Neuf<br>Metro 7<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.862369502399034, 2.3367152819664323], {icon: metro}).addTo(map).bindPopup("Palais Royal -  Musée du Louvre<br>Metro 7, 1<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.86544226718383, 2.334673002819025], {icon: metro}).addTo(map).bindPopup("Pyramides <br>Metro 7, 14<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.8708418308615, 2.3321872728895974], {icon: metro}).addTo(map).bindPopup("Opéra <br>Metro 3, 7, 8<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.8708418308615, 2.3321872728895974], {icon: metro}).addTo(map).bindPopup("Opéra <br>Metro 7, 9 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.874724587489034, 2.339860772096704], {icon: metro}).addTo(map).bindPopup("Le Peletier <br>Metro 7 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.87602305106201, 2.343997514388681], {icon: metro}).addTo(map).bindPopup("Cadet <br>Metro 7 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.877310627967425, 2.3491455153977387], {icon: metro}).addTo(map).bindPopup("Poissonnière <br>Metro 7 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.876277974266166, 2.3598780377090325], {icon: metro}).addTo(map).bindPopup("Gare de l'Est <br>Metro 7 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.878904890193915, 2.362073917434538], {icon: metro}).addTo(map).bindPopup("Château Landon <br>Metro 7 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.88830844840918, 2.374162022619169], {icon: metro}).addTo(map).bindPopup("Riquet <br>Metro 7 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.891421914971374, 2.3775869094766002], {icon: metro}).addTo(map).bindPopup("Crimée <br>Metro 7 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.89481269396987, 2.3822732302711103], {icon: metro}).addTo(map).bindPopup("Corentin Cariou <br>Metro 7 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.89748546631708, 2.3858275712657475], {icon: metro}).addTo(map).bindPopup("Porte de la Villette <br>Metro 7 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.903692727583234, 2.3918482258144294], {icon: metro}).addTo(map).bindPopup("Aubervilliers-Pantin Quatre Chemins <br>Metro 7 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.914581084063116, 2.403702682378594], {icon: metro}).addTo(map).bindPopup("Fort d'Aubervilliers  <br>Metro 7 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.9205608678359, 2.4101577594260846], {icon: metro}).addTo(map).bindPopup("La Courneuve - 8 Mai 1945 <br>Metro 7 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var auber = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.87229160244899, 2.3296597041615446], {icon: auber}).addTo(map).bindPopup("Auber <br>RER A <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.87354356800566, 2.3272338147493223], {icon: metro}).addTo(map).bindPopup("Havre - Caumartin <br>Metro 3, 9 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.87303715279617, 2.3330851534846957], {icon: metro}).addTo(map).bindPopup("Chaussée d'Antin — La Fayette <br>Metro 7, 9 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.8745860358364, 2.320215103869468], {icon: metro}).addTo(map).bindPopup("Saint-Augustin <br>Metro 9 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.87356633801439, 2.314296767135087], {icon: metro}).addTo(map).bindPopup("Miromesnil <br>Metro 9, 13 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.87227934353256, 2.3100018181145554], {icon: metro}).addTo(map).bindPopup("Saint-Philippe-du-Roule <br>Metro 9 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.86902528825963, 2.309903399101517], {icon: metro}).addTo(map).bindPopup("Franklin D. Roosevelt <br>Metro 1, 9 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.86481180181075, 2.301727046398204], {icon: metro}).addTo(map).bindPopup("Alma-Marceau <br>Metro 9 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.864510502173566, 2.2929927221201156], {icon: metro}).addTo(map).bindPopup("Léna<br>Metro 9 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.86320016157932, 2.286548461809492], {icon: metro}).addTo(map).bindPopup("Trocadéro<br>Metro 6, 9 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.8640943902269, 2.2778158418165626], {icon: metro}).addTo(map).bindPopup("Rue de la Pompe <br>Metro 9 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.858206327740355, 2.2742237338596643], {icon: metro}).addTo(map).bindPopup("La Muette <br>Metro 9 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.85550433616836, 2.270117023612686], {icon: metro}).addTo(map).bindPopup("Ranelagh <br>Metro 9 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.85247235335504, 2.2681442042018443], {icon: metro}).addTo(map).bindPopup("Jasmin <br>Metro 9 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.84789099474035, 2.264168711957912], {icon: metro}).addTo(map).bindPopup("Michel-Ange - Auteuil <br>Metro 9, 10 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.845162461575384, 2.261692071871405], {icon: metro}).addTo(map).bindPopup("Michel-Ange - Molitor <br>Metro 9, 10 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.8429644586742, 2.259926306883221], {icon: metro}).addTo(map).bindPopup("Exelmans <br>Metro 9 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.83796384800766, 2.2571313012084335], {icon: metro}).addTo(map).bindPopup("Porte de Saint-Cloud <br>Metro 9 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.83362495129158, 2.2431888178953012], {icon: metro}).addTo(map).bindPopup("Marcel Sembat <br>Metro 9 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.83197110347556, 2.2383152529092802], {icon: metro}).addTo(map).bindPopup("Billancourt <br>Metro 9 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.82953480251928, 2.2301651950315255], {icon: metro}).addTo(map).bindPopup("Pont de Sèvres <br>Metro 9 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+//truc batiment et entreprise
+
+
+
+var inuse = L.icon({
+    iconUrl: 'hhh.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.83742295370379, 2.2406367220401635], {icon: inuse}).addTo(map).bindPopup("InUse <br>Entreprise de Logiciel <br><a href='test.html'>Itinéraire</a>");
+
+//fin du truc
+
+
+var metro = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.8625275873799, 2.345940388669624], {icon: metro}).addTo(map).bindPopup("Les Halles <br>Metro 4 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var ecole = L.icon({
+    iconUrl: 'bat_ecole.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.99274654851732, 2.3829574417580655], {icon: ecole}).addTo(map).bindPopup("Lycée Maryse-Condé <br>BAC Pro, Lycée<br><a href='test.html'>Itinéraire</a>");
+
+
+
+var bus = L.icon({
+    iconUrl: 'Paris_Bus_icon.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.99298597562066, 2.3832900417446004], {icon: bus}).addTo(map).bindPopup("Lycée de la Tourelle <br>BUS 269, 370 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+var bus = L.icon({
+    iconUrl: 'Paris_Bus_icon.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.9937814838783, 2.382324458090647], {icon: bus}).addTo(map).bindPopup("Lycée de la Tourelle <br>BUS 370 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var ecole = L.icon({
+    iconUrl: 'bat_ecole.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.993985602507045, 2.384373728758613], {icon: ecole}).addTo(map).bindPopup("Lycée Jean-Jacques Rousseau <br>BAC Pro, Lycée<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var eat = L.icon({
+    iconUrl: 'kisspng-knife-computer-icons-fork-spoon-clip-art-spoon-5ac3c8480eef64.3328208915227802320612.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.994865541668474, 2.3806399512469816], {icon: eat}).addTo(map).bindPopup("Dolce Pizza <br>Pizza, Fast Food <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var shop = L.icon({
+    iconUrl: 'paris_shop_icon.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.985844041542585, 2.373299802089682], {icon: shop}).addTo(map).bindPopup("My Place <br>Auchan, Foot Locker et magasin <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var shop = L.icon({
+    iconUrl: 'paris_shop_icon.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.87694508954776, 2.348511378437114], {icon: shop}).addTo(map).bindPopup("3D Informatique <br>Réparation PC et vente <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var samu = L.icon({
+    iconUrl: 'paris_samu_medecin-removebg-preview.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.88288586142109, 2.3531323809750972], {icon: samu}).addTo(map).bindPopup("Hopital Lariboisière <br>Soin et Traitement <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var entreprise = L.icon({
+    iconUrl: 'hhh.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.833761339573, 2.2652893901660085], {icon: entreprise}).addTo(map).bindPopup("Microsoft <br>Entreprise d'informatique <br><a href='test.html'>Itinéraire</a>");
+
+
+
+var entreprise = L.icon({
+    iconUrl: 'hhh.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.83386617510749, 2.2600593896417336], {icon: entreprise}).addTo(map).bindPopup("TF1 <br>Télévision et vidéos <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+
+var entreprise = L.icon({
+    iconUrl: 'hhh.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.83222143361781, 2.2590918412022973], {icon: entreprise}).addTo(map).bindPopup("Huawei <br>Téléphonie et Telecom <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var goussrer = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.82977849193181, 2.2637338083837784], {icon: goussrer}).addTo(map).bindPopup("Gare d’Issy-Val de Seine <br>RER C <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+
+var samu = L.icon({
+    iconUrl: 'paris_samu_medecin-removebg-preview.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.82818066837134, 2.2781196619331463], {icon: samu}).addTo(map).bindPopup("Hôpital Corentin Celton AP-HP <br>Soin et Traitement <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var samu = L.icon({
+    iconUrl: 'paris_samu_medecin-removebg-preview.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.83910026882979, 2.2752625335919783], {icon: samu}).addTo(map).bindPopup("Hôpital Européen Georges Pompidou AP-HP <br>Soin et Traitement <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+
+var entreprise = L.icon({
+    iconUrl: 'hhh.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.83646834164823, 2.2737129370121476], {icon: entreprise}).addTo(map).bindPopup("BFMTV <br>Télévision et journalisme <br><a href='test.html'>Itinéraire</a>");
+
+
+var entreprise = L.icon({
+    iconUrl: 'hhh.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.83025353906517, 2.2613640062753113], {icon: entreprise}).addTo(map).bindPopup("Orange France <br>Téléphonie et Telecom <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+
+var sncf = L.icon({
+    iconUrl: 'hhh.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.91479819126085, 2.3494544194974867], {icon: sncf}).addTo(map).bindPopup("Technicentre SNCF TGV du Landy <br>Réparation de TGV <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var entreprise = L.icon({
+    iconUrl: 'hhh.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.83447148130574, 2.3732281957238857], {icon: entreprise}).addTo(map).bindPopup("SNCF Reseau <br>Transport <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var tourisme = L.icon({
+    iconUrl: 'png-clipart-white-and-blue-information-logo-information-sign-symbol-visitor-center-tourist-miscellaneous-blue-removebg-preview.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.85317969818507, 2.3500215894422696], {icon: tourisme}).addTo(map).bindPopup("Cathédrale Notre-Dame de Paris <br>Cathédrale, Touristique <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var tourisme = L.icon({
+    iconUrl: 'png-clipart-white-and-blue-information-logo-information-sign-symbol-visitor-center-tourist-miscellaneous-blue-removebg-preview.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.85860136595275, 2.294567344949801], {icon: tourisme}).addTo(map).bindPopup("Tour Eiffel <br>Touristique <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var tourisme = L.icon({
+    iconUrl: 'png-clipart-white-and-blue-information-logo-information-sign-symbol-visitor-center-tourist-miscellaneous-blue-removebg-preview.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.87377405883765, 2.2949930358626385], {icon: tourisme}).addTo(map).bindPopup("Arc de Triomphe <br>Touristique, National FRANCE <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var tourisme = L.icon({
+    iconUrl: 'png-clipart-white-and-blue-information-logo-information-sign-symbol-visitor-center-tourist-miscellaneous-blue-removebg-preview.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.86063732913352, 2.3376911388965578], {icon: tourisme}).addTo(map).bindPopup("Musée du Louvre <br>Musée, Touristique <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var tourisme2 = L.icon({
+    iconUrl: 'png-clipart-computer-icons-garden-others-miscellaneous-text-removebg-preview.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.863413854926115, 2.3274886069632084], {icon: tourisme2}).addTo(map).bindPopup("Jardin des Tuileries <br>Jardin, Touristique <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var hyper = L.icon({
+    iconUrl: 'kisspng-shopping-cart-software-computer-icons-shopping-leaflet-5ae188567edd41.2387930415247299425196-removebg-preview.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([49.10120285560826, 2.5286185402173547], {icon: hyper}).addTo(map).bindPopup("E.Leclerc LA CHAPELLE EN SERVAL <br>Hypermarché <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var RERB = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([49.00980077287554, 2.5609726294223427], {icon: RERB}).addTo(map).bindPopup("Aéroport CDG 1 <br>RER B et BUS <br><a href='test.html'>Itinéraire</a>");
+
+
+
+var RERB = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.9734358045742, 2.5142445237097757], {icon: RERB}).addTo(map).bindPopup("Parc des Expositions <br>RER B et BUS <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var RERB = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.96290131616528, 2.5124370797800517], {icon: RERB}).addTo(map).bindPopup("Villepinte <br>RER B et BUS <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var RERB = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.94710317451246, 2.5243562276762113], {icon: RERB}).addTo(map).bindPopup("Sevran - Beaudottes <br>RER B et BUS <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var RERB = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.93600981674922, 2.534387619221087], {icon: RERB}).addTo(map).bindPopup("Sevran-Livry <br>RER B et BUS <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var RERB = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.9320450009822, 2.4947755225005155], {icon: RERB}).addTo(map).bindPopup("Aulnay-Sous-Bois <br>RER B et BUS <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var RERB = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.932361025049296, 2.4765724223637458], {icon: RERB}).addTo(map).bindPopup("Le Blanc-Mesnil <br>RER B <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var RERB = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.932822208074604, 2.455077821551238], {icon: RERB}).addTo(map).bindPopup("Drancy <br>RER B et BUS <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var RERB = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.930925762651384, 2.425542782374978], {icon: RERB}).addTo(map).bindPopup("Le Bourget <br>RER B et BUS <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var RERB = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.92421556763445, 2.385043819334178], {icon: RERB}).addTo(map).bindPopup("La Courneuve - Aubervilliers <br>RER B et BUS <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var RERB = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.91816851047368, 2.3624629882054604], {icon: RERB}).addTo(map).bindPopup("La Plaine – Stade de France <br>RER B et BUS <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var RERB = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.853505635012105, 2.345355106526512], {icon: RERB}).addTo(map).bindPopup("Saint-Michel Notre-Dame <br>RER B et Metro 4 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var RERB = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.84675205681236, 2.340388980145494], {icon: RERB}).addTo(map).bindPopup("Luxembourg <br>RER B <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var RERB = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.83998477169576, 2.3369537682872497], {icon: RERB}).addTo(map).bindPopup("Port-Royal <br>RER B <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var RERB = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.83420219848137, 2.332791651924053], {icon: RERB}).addTo(map).bindPopup("Denfert-Rochereau <br>RER B et Metro 4, 6 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var RERB = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.82031744969231, 2.3389368043872354], {icon: RERB}).addTo(map).bindPopup("Cité Universitaire <br>RER B <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var RERB = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.81508946136764, 2.340839425632722], {icon: RERB}).addTo(map).bindPopup("Gentilly <br>RER B <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var RERB = L.icon({
+    iconUrl: 'ggg.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.80782239027284, 2.3333494721961636], {icon: RERB}).addTo(map).bindPopup("Laplace <br>RER B <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var M4 = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.8438508285407, 2.3240331672681247], {icon: M4}).addTo(map).bindPopup("Montparnasse-Bienvenüe <br>Gare Montparnasse, Metro 4, 6, 12, 13 et TGV <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var M4 = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.8421917166429, 2.3290089882329177], {icon: M4}).addTo(map).bindPopup("Vavin <br>Metro 4<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var M4 = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.84679128464514, 2.3269245556558324], {icon: M4}).addTo(map).bindPopup("Saint-Placide <br>Metro 4<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var M4 = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.85140690951162, 2.3309537895568937], {icon: M4}).addTo(map).bindPopup("Saint-Sulpice <br>Metro 4<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var M4 = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.853610286120144, 2.3335720383541485], {icon: M4}).addTo(map).bindPopup("Saint-Germain-des-Prés <br>Metro 4<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var M4 = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.85226739684979, 2.3395018809512544], {icon: M4}).addTo(map).bindPopup("Odéon <br>Metro 4 et 10 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var M4 = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.85372663372752, 2.344445158136093], {icon: M4}).addTo(map).bindPopup("Saint-Michel Notre-Dame <br>Metro 4 et RER B <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var M4 = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.85523342887757, 2.3469617622683216], {icon: M4}).addTo(map).bindPopup("Cité <br>Metro 4 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+var M4 = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.86378811653035, 2.349083394801486], {icon: M4}).addTo(map).bindPopup("Étienne Marcel <br>Metro 4 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var M4 = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.86615767993235, 2.3524469338073946], {icon: M4}).addTo(map).bindPopup("Réaumur - Sébastopol <br>Metro 3 et 4 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+var M4 = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.869382299348054, 2.353711199417789], {icon: M4}).addTo(map).bindPopup("Strasbourg Saint-Denis <br>Metro 4, 8 et 9 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var M4 = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.872379229733404, 2.3559416454470212], {icon: M4}).addTo(map).bindPopup("Château d'Eau <br>Metro 4 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var M4 = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.87672519380788, 2.357742643072331], {icon: M4}).addTo(map).bindPopup("Gare de l’Est <br>Metro 4 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var M4 = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.880300810729516, 2.3539557272581932], {icon: M4}).addTo(map).bindPopup("Gare du Nord <br>Metro 4 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var M4 = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.8837499234592, 2.3499624534947468], {icon: M4}).addTo(map).bindPopup("Barbès - Rochechouart <br>Metro 2 et 4 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var M4 = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.887162755006685, 2.349713426862842], {icon: M4}).addTo(map).bindPopup("Château Rouge <br>Metro 4 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var M4 = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.89152695441295, 2.3497632132181683], {icon: M4}).addTo(map).bindPopup("Marcadet – Poissonniers <br>Metro 4 et 12 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var M4 = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.89399072708138, 2.347800016934989], {icon: M4}).addTo(map).bindPopup("Simplon <br>Metro 4 et 12 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var M4 = L.icon({
+    iconUrl: 'paris_metro_ratp.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([48.8977145560369, 2.3446671458178328], {icon: M4}).addTo(map).bindPopup("Porte de Clignancourt <br>Metro 4 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+
+var eat = L.icon({
+    iconUrl: 'kisspng-knife-computer-icons-fork-spoon-clip-art-spoon-5ac3c8480eef64.3328208915227802320612.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([49.08821115339951, 2.5539935142942864], {icon: eat}).addTo(map).bindPopup("McDonald's Saint Witz <br>FastFood et Burger<br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+var eat = L.icon({
+    iconUrl: 'kisspng-knife-computer-icons-fork-spoon-clip-art-spoon-5ac3c8480eef64.3328208915227802320612.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([49.08819083472183, 2.555308929667035], {icon: eat}).addTo(map).bindPopup("Buffalo Grill Saint Witz <br>Restaurant <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var bus = L.icon({
+    iconUrl: 'Paris_Bus_icon.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([49.09487988498778, 2.5075690099352417], {icon: bus}).addTo(map).bindPopup("Rue des Violettes <br>Arret de BUS, BUS R2 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+var bus = L.icon({
+    iconUrl: 'Paris_Bus_icon.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([49.09487893896524, 2.5065240334914174], {icon: bus}).addTo(map).bindPopup("Rue des Violettes <br>Arret de BUS, BUS R2 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+var bus = L.icon({
+    iconUrl: 'Paris_Bus_icon.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([49.09538660192696, 2.5114976376734086], {icon: bus}).addTo(map).bindPopup("Allée de La Source <br>Arret de BUS, BUS R2 et R112 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+var bus = L.icon({
+    iconUrl: 'Paris_Bus_icon.png',
+    iconSize: [20, 20],
+
+});
+
+L.marker([49.09707572864333, 2.5176341282941515], {icon: bus}).addTo(map).bindPopup("Coteau de La Gare <br>Arret de BUS, BUS R2 et R112 <br><a href='test.html'>Itinéraire</a>");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+  
+  <br>
+  <h2>Utilisez la recherche pour trouver une adresse !</h2>
+</body>
+
+
+
+<!--
+
+  ____           _                                _                            ___                     ____  _                 _     __  __                        _   
+ / ___|__ _ _ __| |_ ___   _ __   __ _ _ __      | | __ ___      ____ _       / _ \ _ __   ___ _ __   / ___|| |_ _ __ ___  ___| |_  |  \/  | __ _ _ __  ___    ___| |_ 
+| |   / _` | '__| __/ _ \ | '_ \ / _` | '__|  _  | |/ _` \ \ /\ / / _` |     | | | | '_ \ / _ \ '_ \  \___ \| __| '__/ _ \/ _ \ __| | |\/| |/ _` | '_ \/ __|  / _ \ __|
+| |__| (_| | |  | ||  __/ | |_) | (_| | |    | |_| | (_| |\ V  V / (_| |  _  | |_| | |_) |  __/ | | |  ___) | |_| | |  __/  __/ |_  | |  | | (_| | |_) \__ \ |  __/ |_ 
+ \____\__,_|_|   \__\___| | .__/ \__,_|_|     \___/ \__,_| \_/\_/ \__, | ( )  \___/| .__/ \___|_| |_| |____/ \__|_|  \___|\___|\__| |_|  |_|\__,_| .__/|___/  \___|\__|
+                          |_|                                     |___/  |/        |_|                                                           |_|                   
+ _                __ _      _   
+| |    ___  __ _ / _| | ___| |_ 
+| |   / _ \/ _` | |_| |/ _ \ __|
+| |__|  __/ (_| |  _| |  __/ |_ 
+|_____\___|\__,_|_| |_|\___|\__|
+                                
+
+
+
+
+ ____    _      _             ____       _                         _   ____       _         
+/ ___|  / \    | |__  _   _  |  _ \ ___ | | ___     __ _ _ __   __| | |  _ \ _ __(_)___ ___ 
+\___ \ / _ \   | '_ \| | | | | |_) / _ \| |/ _ \   / _` | '_ \ / _` | | | | | '__| / __/ __|
+ ___) / ___ \  | |_) | |_| | |  __/ (_) | | (_) | | (_| | | | | (_| | | |_| | |  | \__ \__ \
+|____/_/   \_\ |_.__/ \__, | |_|   \___/|_|\___/   \__,_|_| |_|\__,_| |____/|_|  |_|___/___/
+                      |___/                                                                 
+
+
+
+
+
+
+
+	-->
+</html>

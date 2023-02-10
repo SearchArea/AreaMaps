@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Search Area</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+body {
+   height: 500px;
+}
+footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: white;
+   color: black;
+   text-align: left;
+}
+</style>
+
+<style>
+    .footer-clean {
+  padding:50px 0;
+  background-color:#fff;
+  color:#4b4c4d;
+}
+
+.footer-clean h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.footer-clean ul {
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+.footer-clean ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-clean ul a:hover {
+  opacity:1;
+}
+
+.footer-clean .item.social {
+  text-align:right;
+}
+
+@media (max-width:767px) {
+  .footer-clean .item {
+    text-align:center;
+    padding-bottom:20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-clean .item.social {
+    text-align:center;
+  }
+}
+
+.footer-clean .item.social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin-left:10px;
+  margin-top:22px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-clean .item.social > a:hover {
+  opacity:0.9;
+}
+
+@media (max-width:991px) {
+  .footer-clean .item.social > a {
+    margin-top:40px;
+  }
+}
+
+@media (max-width:767px) {
+  .footer-clean .item.social > a {
+    margin-top:10px;
+  }
+}
+
+.footer-clean .copyright {
+  margin-top:14px;
+  margin-bottom:0;
+  font-size:13px;
+  opacity:0.6;
+}
+
+</style>
+<style>
+    input[type="search" i] {
+    appearance: auto;
+    box-sizing: border-box;
+    padding: 1px 2px;
+}
+</style>
+</head>
+
+
+<body>
+
+<div align="right">          <nav>
+        <a href="areamaps.html">Revenir a la maps</a>
+            <a href="helpmaps.html">Aidez-moi !</a>
+      </nav></div>
+ 
+
+
+
+
+<style>
+ main {
+  height: calc(100% - 154px);
+}
+
+.google-logo-container {
+  min-height: 92px;
+  max-height: 290px;
+  height: calc(100% - 560px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.magnify-icon {
+  width: 20px;
+  height: 20px;
+  margin: 12px 13px 12px 14px;
+  fill: #9aa0a6;
+}
+
+.remove-text-link {
+  display: block;
+  padding: 10px 0px 10px 8px;
+  margin-right: 4px;
+}
+
+.remove-text-link svg {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  fill: #70757a;
+  margin-right: 12px;
+}
+
+.link-border-right {
+  border-left: 1px solid #dfe1e5;
+  height: 100%;
+  display: inline-block;
+}
+
+.mic-icon-link {
+  padding: 0 8px;
+  margin-right: 8px;
+}
+
+.mic-icon-link svg {
+  width: 24px;
+  margin-top: 10px;
+}
+
+.search-bar {
+  margin: 26px auto 0;
+  max-width: 584px;
+  display: flex;
+  border: 1px solid #dfe1e5;
+  border-radius: 24px;
+  height: 46px;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #000000de;
+  max-width: 584px;
+}
+
+.search-bar:hover {
+  box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+  /* border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; */
+  border-color: rgba(223, 225, 229, 0);
+}
+
+input:not(:valid) ~ .remove-text-link {
+  display: none;
+}
+
+.search-buttons {
+  display: flex;
+  padding-top: 18px;
+  justify-content: center;
+}
+
+input[type="submit"] {
+  display: flex;
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  color: #3c4043;
+  font-size: 14px;
+  font-family: arial, sans-serif;
+  padding: 0 16px;
+  margin: 11px 6px;
+  line-height: 27px;
+  height: 36px;
+  min-width: 54px;
+  align-items: flex-start;
+}
+
+input[type="submit"]:hover {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dadce0;
+  background-color: #f8f9fa;
+  color: #202124;
+  cursor: pointer;
+}
+
+main .language-bar {
+  display: flex;
+  justify-content: center;
+  padding-top: 12px;
+}
+
+.language-bar {
+  text-align: center;
+  display: inline-block;
+  line-height: 28px;
+  font-size: 13px;
+}
+
+.language-bar a {
+  padding: 0 3px;
+  color: #1a0dab;
+  text-decoration: none;
+}
+
+.language-bar a:hover {
+  text-decoration: underline;
+}
+
+</style>
+
+
+
+
+ 
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      min-height: 500px;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+
+
+<h2>Voici votre trajet :</h2>
+<h3>Survilliers-Fosses RER D ➔ Châtelet-les-Halles ➔ Metro 7 Châtelet ➔ Metro 7 Poissonière ➔ 50 m Boutique 3D Informatique</h3>
+<br>
+
+
+<div id="map">
+
+<script>
+  
+// Don't forget to replace <YOUR_ACCESS_TOKEN> by your real access token ! 
+    const accessToken = 'IQuu6nhyqlTGIY23gDB6zhMfJsKAgdaVwOCMVa5dnPeoBQ0ibjx1LDnntDSHbzKG';
+    // Set your custom style ID. To get your custom style ID see https://www.jawg.io/docs/maps#get-custom-style-id
+    const styleId = '86d6bce3-fa6f-47c7-8e94-a30d597b7a15';
+    const map = L.map('map').setView([48.9070392,2.3569261], 9.98);
+    L.tileLayer(
+      `https://tile.jawg.io/86d6bce3-fa6f-47c7-8e94-a30d597b7a15/{z}/{x}/{y}.png?access-token=IQuu6nhyqlTGIY23gDB6zhMfJsKAgdaVwOCMVa5dnPeoBQ0ibjx1LDnntDSHbzKG`, {
+        attribution: '<a href="aboutmaps.html" title="Tiles Courtesy of Jawg Maps" target="_blank" class="jawg-attrib">&copy; <b>Search</b>Area</a> '  ,
+        maxZoom: 24
+      }
+    ).addTo(map);
+
+
+
+
+
+// Metro7
+var latlngs = [
+    [48.85677245967703, 2.3483535712989885],
+    [48.858563530915006, 2.341691776418609],
+
+
+
+    [48.86543048472548, 2.3345270503583078],
+
+    [48.87086478354018, 2.3321024501839926],
+
+
+    [48.87310876066143, 2.3333038927640994],
+    [48.8747035225326, 2.339440725856023],
+    [48.875888974185806, 2.343968257795599],
+    [48.877328306724074, 2.3490537208236035],
+   
+    
+];
+
+var latlngs = L.polyline(latlngs, {color: 'pink'}).addTo(map);
+
+
+
+
+// create a red polyline from an array of LatLng points
+var latlngs = [
+    [49.09940880957772, 2.5255210999998163],
+    [49.06522111702806, 2.5218208541099396],
+    [49.04893577451119, 2.5015438225528053],
+    [49.002738189946506, 2.42982981822226],
+    [48.95025862004038, 2.3524361203535933],
+    [48.9449373870177, 2.3455188758368677],
+    [48.94093290421826, 2.3443288054514397],
+    [48.91353336953403, 2.3511693015094064],
+    [48.89991288794617, 2.354361082827077],
+    [48.88637411126433, 2.3574852300547287],
+    [48.88114411252508, 2.355999241112678],
+    [48.861801044517165, 2.3469412232370073],
+
+
+
+    
+
+
+    
+];
+
+var latlngs = L.polyline(latlngs, {color: 'green'}).addTo(map);
+
+
+// create a red polyline from an array of LatLng points
+var halles = [
+    [48.861771756145366, 2.3469771898523013],
+    [48.857343859677684, 2.3468229074602216],
+  
+
+
+
+
+    
+
+
+    
+];
+
+
+
+
+var halles = L.polyline(halles, {color: 'black'}).addTo(map);
+
+
+
+
+// Metro7
+var latlngs = [
+    [48.87731290955851, 2.349132070973586],
+    [48.87713350513016, 2.349037643837031],
+    [48.87698630175806, 2.3485165469050036],
+
+
+   
+    
+];
+
+var latlngs = L.polyline(latlngs, {color: 'black'}).addTo(map);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</div>
+<h4>Correspondance sur votre Trajet:</h4>
+<br>
+<h5>RER D et Metro 7</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+     <br>
+<style>
+body {
+   height: 500px;
+}
+footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: white;
+   color: black;
+   text-align: left;
+}
+</style>
+    <br>
+    <br>
+    <br>
+
+
+    <footer>
+<span>© 2022-2023, PoloOhYeah and Driss / <a href="https://twitter.com/PoloOhYeah/">Mon Twitter</a></span>
+ / <a href="helpmaps.html">Aidez-moi !</a> / <a href="about.html">A propos du site</a>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  
+
+
+
+  <!-- NAVYAAN FOOTER END -->
+
+
+
+<!-- Les crédits de ceux qui fait le site ou participer de loin ou de près -->
+
+
+
+
+
+
+
+
+
+
+    <!--
+ ____    _      _             ____       _                         _   ____       _         
+/ ___|  / \    | |__  _   _  |  _ \ ___ | | ___     __ _ _ __   __| | |  _ \ _ __(_)___ ___ 
+\___ \ / _ \   | '_ \| | | | | |_) / _ \| |/ _ \   / _` | '_ \ / _` | | | | | '__| / __/ __|
+ ___) / ___ \  | |_) | |_| | |  __/ (_) | | (_) | | (_| | | | | (_| | | |_| | |  | \__ \__ \
+|____/_/   \_\ |_.__/ \__, | |_|   \___/|_|\___/   \__,_|_| |_|\__,_| |____/|_|  |_|___/___/
+                       -->
+
+
+
+<!--        
+             _   _                                 _                               _____                  _          
+            | | | |                               | |                             |  __ \                (_)         
+   ___  _ __| |_| |__   ___   __ _ _ __ __ _ _ __ | |__   ___   _ __   __ _ _ __  | |  | | __ _ _ __ ___  _ _ __ ___ 
+  / _ \| '__| __| '_ \ / _ \ / _` | '__/ _` | '_ \| '_ \ / _ \ | '_ \ / _` | '__| | |  | |/ _` | '_ ` _ \| | '__/ _ \
+ | (_) | |  | |_| | | | (_) | (_| | | | (_| | |_) | | | |  __/ | |_) | (_| | |    | |__| | (_| | | | | | | | | |  __/
+  \___/|_|   \__|_| |_|\___/ \__, |_|  \__,_| .__/|_| |_|\___| | .__/ \__,_|_|    |_____/ \__,_|_| |_| |_|_|_|  \___|
+                              __/ |         | |                | |                                                   
+                             |___/          |_|                |_|                                                   
+                           
+                           -->
+
+
+
+
+</body>
+
+</html>
